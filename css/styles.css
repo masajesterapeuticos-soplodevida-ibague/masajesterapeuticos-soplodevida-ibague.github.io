@@ -1,0 +1,473 @@
+/* ---------------------------
+   RESET / GLOBAL
+   --------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --green: #54b46a;
+  --accent: #28a745;
+  --accent-dark: #1e7e34;
+  --text: #000;
+  --muted: #999;
+  --card-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* ----Estilo global----*/
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  
+    /*background: url("") center/cover no-repeat fixed; */
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* ---------------------------
+   HEADER
+   --------------------------- */
+header.hide {
+  transform: translateY(-100%);
+  transition: transform 0.4s ease;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0,0,0,0.6);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: transform 0.4s ease, background-color 0.3s ease, padding 0.3s ease;
+}
+
+header h1 {
+  font-size: 1.8em;
+  color: #fff;
+  margin: 0;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  background-color: var(--green);
+  color: #000;
+}
+ul{
+  list-style: none;
+}
+
+/* Evitar solapamiento del header fijo */
+main {
+  padding-top: 80px;
+}
+
+/* ---------------------------
+   SECCIONES
+   --------------------------- */
+section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: rgba(255,255,255,0.5);
+  color: var(--text);
+}
+
+section#inicio {
+  min-height: 100vh;
+  padding: 140px 20px;
+  background:
+    linear-gradient(rgba(255,255,255,0.35), rgba(255,255,255,0.35)),
+    url("../img/hoja.png") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+section h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: var(--green);
+}
+
+section p, section ul {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+#inicio.reveal { transition-delay: 0.2s; }
+
+#inicio p {
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* ---------------------------
+   SECCIÓN ATENCIÓN
+   --------------------------- */
+
+section#atencion {
+  background:
+    linear-gradient(rgba(255,255,255,0.35), rgba(255,255,255,0.35)),
+    url("../img/hoja.png") center/cover no-repeat;
+}
+
+section#atencion p{
+   max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-size: 1.2em;
+  text-align: left;
+}
+section#atencion ul {
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-size: 1.2em;
+}
+
+section#atencion ul {
+  padding-left: 0;
+}
+
+section#atencion li {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+section#atencion h3 {
+  color: var(--green);
+  margin-bottom: 8px;
+}
+
+/* ---------------------------
+   BOTONES
+   --------------------------- */
+.btn-info {
+  display: inline-block;
+  text-decoration: none;
+  background-color: var(--accent);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.15s ease;
+}
+
+.btn-info:hover { background-color: var(--accent-dark); }
+
+.btn-hero {
+  margin-top: 30px;
+  padding: 14px 36px;
+  background-color: var(--accent);
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-hero:hover {
+  background-color: var(--accent-dark);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+}
+
+/* ---------------------------
+   BENEFICIOS / GALERÍA
+   --------------------------- */
+.beneficios {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.fila {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.item {
+  max-width: 400px;
+  margin: 15px;
+  width: 100%;
+  padding: 15px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+.item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+/* ---------------------------
+   MODAL IMAGEN
+   --------------------------- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background-color: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  animation: zoomIn 0.3s ease;
+  object-fit: contain;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.85); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ---------------------------
+              TABLA
+   --------------------------- */
+section#precios {
+  width: 100%;
+  margin: 0 auto;
+  background-color: transparent;
+}
+
+.tabla-precios {
+  background-color: #fff;
+  margin: 20px auto;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: default;
+  width: 80%;
+  max-width: 600px;
+  overflow: hidden;
+  border-collapse: collapse;
+}
+
+.tabla-precios thead th {
+  background-color: var(--green);
+  color: #fff;
+  padding: 10px;
+}
+
+.tabla-precios th,
+.tabla-precios td {
+  border: 1px solid #eaeaea;
+  padding: 10px;
+  text-align: center;
+}
+
+.tabla-precios td.muted {
+  color: var(--muted);
+  font-style: italic;
+}
+
+
+.tabla-precios tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.tabla-precios thead th:first-child { border-top-left-radius: 14px; }
+.tabla-precios thead th:last-child  { border-top-right-radius: 14px; }
+.tabla-precios tbody tr:last-child td:first-child  { border-bottom-left-radius: 14px; }
+.tabla-precios tbody tr:last-child td:last-child   { border-bottom-right-radius: 14px; }
+
+.tabla-precios td:hover {
+  background-color: rgba(230,230,230,1);
+  transform: scale(1.02);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* ---------------------------
+   REVEAL (animación entrada)
+   --------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------------------------
+   WHATSAPP BUTTON
+   --------------------------- */
+.whatsapp-btn {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.whatsapp-btn img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.whatsapp-btn img:hover {
+  transform: scale(1.12) rotate(1deg);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* ---------------------------
+   WHATSAPP FLOTANTE
+   --------------------------- */
+
+#whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+#whatsapp-float img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+#whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+/* Estado oculto */
+#whatsapp-float.hide {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.8);
+}
+
+/* ---------------------------
+   FOOTER
+   --------------------------- */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0,0,0,0.8);
+  color: #fff;
+  font-size: 0.9em;
+  position: relative;
+}
+
+/* --------------------------
+            RESPONSIVE
+   --------------------------*/
+@media (max-width: 480px) {
+
+  header h1 { font-size: 1.5em; }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  section h2 { font-size: 2em; }
+
+  section {
+    padding: 40px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section p {
+    width: 100%;
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  .tabla-precios { font-size: 0.9em; width: 95%; max-width: 700px; }
+
+  .whatsapp-btn img { width: 80px; height: 80px; }
+
+  /* Cambiar grid a columna / layout vertical en móviles */
+  .beneficios {
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .item {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .item img { width: 100%; height: auto; }
+
+  .fila {
+    flex-direction: column;
+    align-items: center;
+  }
+}
